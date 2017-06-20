@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>CAL Output</title>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	  #infoSpan{
+		position:fixed;
+		bottom:0px;
+		left:0px;
+		background: #fff;
+		font-family: "Verdana";
+		padding:2px;
+		font-size:16px;
+		max-height:20px;
+	  }
+    </style>
+	<script src="jquery.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+	<span id="infoSpan"></span>
+    <script>
+		function toDegrees(radians){
+			return radians * (180 / Math.PI);
+		}
+		var colors = ["#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5", "#2196F3", "#03A9F4", "#00BCD4",
+		"#009688", "#4CAF50", "#8BC34A", "#CDDC39", "#FF9800", "#FF5722", "#795548"];
+		// Use the DOM setInterval() function to change the offset of the symbol
+		// at fixed intervals.
+		function animateCircle(line) {
+			var count = 0;
+			window.setInterval(function() {
+				count = (count + 1) % 250;
+
+				var icons = line.get('icons');
+				icons[0].offset = (count / 2) + '%';
+				line.set('icons', icons);
+			}, 20);
+		}
+
+		function initMap() {
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 16,
+				center: {lat: 41.177331426373925, lng: -8.598700761795044},//near feup
+				mapTypeId: 'roadmap'
+			});
+			
+  
+			var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			var marker;
+			var garageId = <|!TEXT TO BE REPLACED GARAGE_ID!|>;
+			var stationId = <|!TEXT TO BE REPLACED SATION_ID!|>;
+			var containerIds = [<|!TEXT TO BE REPLACED CONTAINER_IDS!|>];
+			
+			var paths = [
+<|!TEXT TO BE REPLACED PATHS!|>					];
+			
+			var markers = [
+<|!TEXT TO BE REPLACED MARKERS!|>				];
+			var idsMarked =[];//to avoid repeating
+			var idsLabelsMarked =[];//to avoid repeating
+			var infoSpan = $("#infoSpan");
+			var indexOfMarker = -1;
+			for(var i = 0; i < paths.length; i++){
+				for(var j = 0; j < paths[i].length; j++){
+					indexOfMarker = idsMarked.indexOf(paths[i][j].id);
+					if( indexOfMarker == -1){//marker not added
+						infoSpan.html(infoSpan.html() + "->" + labels[j % labels.length]);
+						idsMarked.push(paths[i][j].id);
+						idsLabelsMarked.push({id:paths[i][j].id, label:labels[j % labels.length]});
+						marker = new google.maps.Marker({
+							position: new google.maps.LatLng(paths[i][j].lat, paths[i][j].lng),
+							map: map,
+							title: "{Latitude: "+paths[i][j].lat+", Longitude:"+paths[i][j].lng+"}\n{Path: "+i+", Index:"+j+"}\n{ID: "+paths[i][j].id+", label: "+labels[j % labels.length]+"}",
+							label:labels[j % labels.length]
+						});
+						if(containerIds.indexOf(paths[i][j].id) != -1){
+							//marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
+							marker.setIcon('http://maps.google.com/mapfiles/ms/micons/yellow.png');
+						}else if(paths[i][j].id == garageId){
+							//marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+							//marker.setIcon('http://maps.google.com/mapfiles/ms/micons/blue.png');
+							marker.setIcon('http://maps.google.com/mapfiles/kml/pal3/icon56.png');
+						}else if(paths[i][j].id == stationId){//the final station
+							//marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+							//marker.setIcon('http://maps.google.com/mapfiles/ms/micons/green.png');
+							marker.setIcon('http://maps.google.com/mapfiles/kml/pal2/icon13.png');
+						}
+					}else{
+						for(var k = 0; k < idsLabelsMarked.length; k++){
+							if(idsLabelsMarked[k].id == paths[i][j].id){
+								infoSpan.html(infoSpan.html() + "->" + idsLabelsMarked[k].label);
+							}
+						}
+					}
+				}
+				var colorTemp = colors[Math.floor(Math.random() * colors.length) ];
+				var lineSymbol = {
+					path: google.maps.SymbolPath.CIRCLE,
+					scale: 8,
+					strokeColor: colorTemp 
+				};
+				var linePath = new google.maps.Polyline({
+					path: paths[i],
+					//geodesic: true,
+					strokeColor: colorTemp,
+					strokeOpacity: 0.8,
+					strokeWeight: 3,
+					icons: [{
+						icon: lineSymbol,
+						offset: '100%'
+					}]
+				});
+				linePath.setMap(map);
+				animateCircle(linePath);
+			}
+			
+			
+			//display individual markers
+			for (var i = 0; i < markers.length; i++) {
+				marker = new google.maps.Marker({
+					position: new google.maps.LatLng(markers[i].lat, markers[i].lng),
+					map: map,
+					title: "{Latitude: "+markers[i].lat+", Longitude:"+markers[i].lng+"}\n{index: "+i+", ID: "+markers[i].id+"}"
+				});
+			}
+			
+			//autofit
+			var bounds = new google.maps.LatLngBounds();
+			for (var i = 0; i < paths.length; i++) {
+				for(var j = 0; j < paths[i].length; j++){
+					bounds.extend(paths[i][j]);
+				}
+			}
+			for (var i = 0; i < markers.length; i++) {
+				bounds.extend(markers[i]);
+			}
+			map.fitBounds(bounds);
+		}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsusjUbQ2DSPQO3L2mZbPt6aHahkmZTWY&callback=initMap">
+    </script>
+  </body>
+</html>
