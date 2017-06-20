@@ -8,6 +8,7 @@ Smart Cities - Garbage Collection route planning algorithms
 
 ## Interesting features
  - Floyd-Warshall Algorithm
+ - [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/)
  - Nearest Neighbour Algorithm
  - String Matching Algorithms
  - Real [OpenStreetMaps](https://www.openstreetmap.org) Data
