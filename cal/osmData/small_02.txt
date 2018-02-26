@@ -1,0 +1,116 @@
+4306661;;False
+26248559;Rua Doutor António Bernardino de Almeida;False
+27103792;Rua do Salgueiral;False
+35078500;Rua Doutor Manuel Pereira da Silva;True
+35078501;Rua do Doutor Manuel Laranjeira;True
+35105021;Rua do Guadiana;True
+35145152;Rua Alfredo Allen;True
+35145272;Rua Júlio Amaral de Carvalho;False
+35145521;Rua do Doutor Roberto Frias;True
+36979228;Rua Doutor Plácido da Costa;False
+37141967;Rua Dom Frei Vicente da Soledade e Castro;True
+37141968;Rua do Doutor Manuel Pereira da Silva;True
+37141973;;True
+37141975;Travessa da Fonte do Outeiro;True
+37141982;;True
+37141983;Rua do Actor Eduardo Brazão;True
+37141985;Rua do Corgo;True
+37142500;Autoestrada de Entre-Douro-e-Minho;False
+37338732;;False
+37338733;;False
+37937531;Rua do Côa;False
+37937532;Rua do Águeda;False
+41380172;;True
+41380173;;True
+62087615;Rua Doutor Júlio de Matos;True
+63192525;Rua Henrique de Sousa Reis;False
+106334851;Rua Henrique de Sousa Reis;False
+106334854;Rua da Fonte do Outeiro;False
+106334857;Rua Professor António Cruz;True
+106334866;;True
+173013103;Rua João Allen;True
+196972617;;True
+196972618;;True
+196972619;;False
+197100020;Rua do Tua;False
+198248591;;False
+205638142;Acesso consultas externas;False
+205638144;;False
+205638147;;True
+208262837;;True
+208263088;;True
+208265320;;True
+208272059;;True
+220234012;Autoestrada de Entre-Douro-e-Minho;False
+238249552;;False
+238249553;;False
+238249554;;True
+238249556;;True
+238249557;;True
+316459169;Rua Doutor Roberto Frias;True
+349643887;Rua Doutor Plácido da Costa;False
+349643889;Rua Doutor Plácido da Costa;False
+349643961;;False
+349643964;;False
+351525693;;False
+351525729;;False
+351525773;;False
+367461722;Autoestrada de Entre-Douro-e-Minho;False
+367461723;Autoestrada de Entre-Douro-e-Minho;False
+367464148;Autoestrada de Entre-Douro-e-Minho;False
+367477465;Autoestrada de Entre-Douro-e-Minho;False
+367477467;Autoestrada de Entre-Douro-e-Minho;False
+367477469;Autoestrada de Entre-Douro-e-Minho;False
+367477470;Autoestrada de Entre-Douro-e-Minho;False
+367477475;Autoestrada de Entre-Douro-e-Minho;False
+367477476;Autoestrada de Entre-Douro-e-Minho;False
+415097761;;False
+429123178;;False
+429123179;;False
+429123180;;False
+429123181;;False
+440117149;;False
+440681022;;False
+446887316;Rua do Bairro da Areosa;False
+446887317;Rua Horácio Marçal;False
+446887318;;False
+448190641;;False
+448190642;;False
+448568790;;False
+448568791;;False
+448568792;;False
+448568793;;False
+448568794;;False
+448858674;Rua Alfredo Allen;False
+450475039;Rua Henrique de Sousa Reis;False
+450475040;;False
+450475041;;False
+450904360;Rua Doutor Júlio de Matos;False
+450904366;Rua da Fonte do Outeiro;False
+450904367;;False
+455315129;;False
+455315130;;False
+455315138;;False
+455315139;;False
+455315140;;False
+455315141;;False
+455315145;Viela de Lamas;False
+455315147;;False
+455315148;;False
+456117157;;False
+456117158;;False
+456117161;;False
+456118771;;False
+461133007;;False
+461133008;;False
+461133009;;False
+461135460;;False
+461135462;;False
+461135463;;False
+461135464;;False
+461925686;Rua do Doutor Júlio de Matos;False
+461925687;Rua do Doutor Manuel Pereira da Silva;False
+461925688;Travessa de Lamas;False
+461925689;Rua do Actor Ferreira da Silva;False
+461925690;Travessa de Lamas;False
+463835631;;False

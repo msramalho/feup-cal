@@ -312,7 +312,13 @@ cal/cal.vcxproj
 cal/maps.html
 cal/output/maps.html
 cal/html/*
-cal/osmData/*
+cal/osmData/0*
+cal/osmData/h*
+cal/osmData/l*
+cal/osmData/m*
+cal/osmData/o*
+cal/osmData/porto*
+
 cal/output/exampleBig_01.html
 cal/output/exampleBig_02.html
 cal/output/exampleBug.html
