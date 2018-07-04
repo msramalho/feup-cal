@@ -14,3 +14,7 @@ Smart Cities - Garbage Collection route planning algorithms
  - [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/)
  - Real [OpenStreetMaps](https://www.openstreetmap.org) Data
  - [Doxygen](http://www.stack.nl/~dimitri/doxygen/) Documentation
+
+#### Example of a simple output visualization
+
+<p align="center"><img src="https://i.imgur.com/uteRAyL.gif"></p>
